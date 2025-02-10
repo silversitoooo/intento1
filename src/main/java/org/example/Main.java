@@ -2,7 +2,6 @@ package org.example;
 
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.concurrent.TimeUnit;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -46,9 +45,9 @@ public class Main {
         algorithm.sort(numbersToSort);
         long endTime = System.nanoTime();
 
-        // Calcular tiempo en milisegundos
-        double timeInMs = TimeUnit.NANOSECONDS.toMillis(endTime - startTime);
-        System.out.printf("%s: %.2f ms%n", name, timeInMs);
+        // Calcular tiempo en nanosegundos directamente
+        long timeInNs = endTime - startTime;
+        System.out.printf("%s: %d ns%n", name, timeInNs);
 
         // Verificar si está ordenado
         boolean isSorted = Utils.isSorted(numbersToSort);
